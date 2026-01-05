@@ -1,59 +1,33 @@
-# Portfolio
+# 👨‍💻 Portafolio Profesional - Matías Zahn
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.2.
+Este repositorio contiene el código fuente de mi portafolio personal y profesional. Diseñado como una **Single Page Application (SPA)** moderna, con un enfoque en rendimiento, animaciones fluidas y una arquitectura limpia.
 
-## Development server
+El objetivo de este proyecto es demostrar habilidades Fullstack, integrando un frontend reactivo con lógica de backend para notificaciones.
 
-To start a local development server, run:
+---
 
-```bash
-ng serve
-```
+## 🚀 Tecnologías y Herramientas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+El proyecto está construido utilizando las últimas prácticas de la industria:
 
-## Code scaffolding
+### Frontend
+- **Framework:** [Angular 18+](https://angular.io/) (Standalone Components).
+- **Estilos:** [Tailwind CSS](https://tailwindcss.com/) (Diseño Responsive y moderno).
+- **Animaciones:** Angular Animations & View Transitions API (Transiciones nativas).
+- **Formularios:** Template-driven forms con validaciones y RxJS (`exhaustMap` para manejo de eventos).
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+### Backend / Servicios
+- **Node.js & Express:** Lógica de servidor para el manejo de correos.
+- **Nodemailer:** Servicio de envío de emails SMTP (Gmail).
+- **Arquitectura:** Clean Architecture (DTOs, Services, Controllers separados).
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## ⚙️ Instalación y Configuración Local
 
-```bash
-ng generate --help
-```
+Si deseas clonar y ejecutar este proyecto en tu máquina local:
 
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+1. **Clonar el repositorio**
+   ```bash
+   git clone [https://github.com/Matias-Zahn/portfolio.git](https://github.com/Matias-Zahn/portfolio.git)
+   cd portfolio
