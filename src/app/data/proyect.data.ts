@@ -1,5 +1,13 @@
 import { Project } from '../models/project.interface';
 export const BACKEND_PROJECTS: Project[] = [
+{
+    title: "Inventory Manager",
+    description: "Sistema fullstack para la gestión y trazabilidad de inventarios. Control de entradas/salidas, alertas de stock crítico y reportes. Frontend reactivo conectado a una API REST robusta.",
+    image: "/ProyectsImgBack/inventory.png", 
+    demoUrl: null, 
+    githubUrl: "https://github.com/Matias-Zahn/sistema-gestor-inventario-backend.git", 
+    tags: ["Node.js", "Express", "Angular", "MongoDB"], 
+  },
   {
     title: "Teslo Shop",
     description: "API RESTful para un e-commerce. Permite la gestión de usuarios, productos y carga de imágenes. Enfocado en seguridad y escalabilidad.",
