@@ -1,0 +1,51 @@
+import { Project } from '../models/project.interface';
+export const BACKEND_PROJECTS: Project[] = [
+  {
+    title: "Teslo Shop",
+    description: "API RESTful para un e-commerce. Permite la gestión de usuarios, productos y carga de imágenes. Enfocado en seguridad y escalabilidad.",
+    image: "/ProyectsImgBack/teslo.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/teslo-nest",
+    tags: ["NestJS", "TypeScript", "Docker", "PostgreSQL"],
+  },
+  {
+    title: "Clínica Nest",
+    description: "Sistema de gestión veterinaria migrado a NestJS. Utiliza Docker para la contenedorización y TypeORM para la comunicación eficiente con Postgres.",
+    image: "/ProyectsImgBack/clinica-nest.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/Veterinary-clinic",
+    tags: ["NestJS", "TypeScript", "Docker", "PostgreSQL"],
+  },
+  {
+    title: "Clínica Veterinaria",
+    description: "Plataforma para facilitar la gestión de citas médicas, conectando a propietarios de mascotas con veterinarios de manera sencilla y efectiva.",
+    image: "/ProyectsImgBack/clinica.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/PET-CLINIC.git",
+    tags: ["Node.js", "Express", "Sequelize", "PostgreSQL", "Firebase"],
+  },
+  {
+    title: "Reparaciones Motores",
+    description: "API para agendar citas de taller. Permite a los empleados actualizar el estado cuando las motocicletas ya están listas para ser recogidas.",
+    image: "/ProyectsImgBack/academloRepairs.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/Academlo-Repairs.git",
+    tags: ["Node.js", "Express", "Sequelize", "PostgreSQL"],
+  },
+  {
+    title: "Meals API",
+    description: "API de pedidos para restaurantes. Incluye funcionalidades para realizar órdenes y dejar reseñas sobre el servicio y la calidad de la comida.",
+    image: "/ProyectsImgBack/academloMeals.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/Academlo-Meals.git",
+    tags: ["Node.js", "Express", "Sequelize", "PostgreSQL"],
+  },
+  {
+    title: "Banco API",
+    description: "Simulación de sistema bancario backend. Permite a los usuarios realizar transferencias entre cuentas y gestionar su historial de transacciones.",
+    image: "/ProyectsImgBack/academloBank.png",
+    demoUrl: null,
+    githubUrl: "https://github.com/Matias-Zahn/Academlo-bank.git",
+    tags: ["Node.js", "Express", "Sequelize", "PostgreSQL"],
+  },
+];

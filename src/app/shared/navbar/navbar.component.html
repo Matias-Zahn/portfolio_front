@@ -1,0 +1,56 @@
+<nav class="fixed top-0 left-0 w-full z-50 transition-all duration-300 bg-black/60 backdrop-blur-md border-b border-white/10">
+  
+  <div class="px-6 py-4 flex justify-between items-center">
+    
+    <div class="flex items-center gap-2 cursor-pointer" routerLink="/" (click)="closeMenu()">
+      <span class="text-amber-400 text-3xl font-bold">&lt;/&gt;</span>
+      <h1 class="text-xl md:text-2xl font-bold tracking-tight text-white hover:text-amber-300 transition-colors">
+        Zahn_Matias<span class="text-amber-400">.dev</span>
+      </h1>
+    </div>
+
+    <div class="hidden md:flex gap-1">
+      @for (item of menuItems; track item.name) {
+        <button
+          class="px-4 py-2 rounded-full text-sm font-medium text-gray-300 transition-all duration-300 hover:bg-white/10 hover:text-white"
+          [routerLinkActiveOptions]="{ exact: true }"
+          routerLinkActive="bg-white/10 text-amber-300 shadow-[0_0_15px_rgba(251,191,36,0.3)]"
+          [routerLink]="item.path"
+        >
+          {{ item.name }}
+        </button>
+      }
+    </div>
+
+    <button 
+      class="md:hidden text-gray-300 hover:text-white focus:outline-none p-2"
+      (click)="toggleMenu()"
+    >
+      @if (!isMobileMenuOpen) {
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+      } @else {
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+      }
+    </button>
+
+  </div>
+
+  @if (isMobileMenuOpen) {
+    <div class="md:hidden bg-zinc-900/95 backdrop-blur-xl border-t border-white/10 absolute w-full left-0 animate-fade-in-down">
+      <div class="flex flex-col p-4 space-y-2">
+        @for (item of menuItems; track item.name) {
+          <button
+            class="block w-full text-left px-4 py-3 rounded-lg text-lg font-medium text-gray-300 hover:bg-white/10 hover:text-amber-400 transition-colors"
+            [routerLinkActiveOptions]="{ exact: true }"
+            routerLinkActive="text-amber-400 bg-white/5 border-l-4 border-amber-400"
+            [routerLink]="item.path"
+            (click)="closeMenu()" 
+          >
+            {{ item.name }}
+          </button>
+        }
+      </div>
+    </div>
+  }
+
+</nav>

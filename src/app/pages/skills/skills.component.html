@@ -1,0 +1,46 @@
+<section class="min-h-screen bg-black text-white px-6 py-20">
+  
+  <div class="container mx-auto max-w-6xl">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Mis Habilidades Técnicas</h2>
+      <p class="text-gray-400 max-w-2xl mx-auto">
+        Un conjunto de herramientas y tecnologías con las que construyo soluciones robustas y escalables.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      
+      @for (category of skillCategories; track category.name) {
+        
+        <div class="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-blue-500/50 transition-colors duration-300 group">
+          
+          <div class="flex items-center gap-3 mb-6">
+            <span class="text-2xl bg-zinc-800 p-2 rounded-lg group-hover:scale-110 transition-transform">
+              {{ category.icon }}
+            </span>
+            <h3 class="text-xl font-bold text-gray-200">
+              {{ category.name }}
+            </h3>
+          </div>
+
+          <div class="flex flex-wrap gap-2">
+            @for (skill of category.skills; track skill.name) {
+              
+              <div class="flex items-center gap-2 px-3 py-2 bg-zinc-800/50 rounded-lg border border-zinc-700 hover:bg-zinc-700 transition-colors cursor-default">
+                <span class="text-sm font-medium text-gray-300">
+                  {{ skill.name }}
+                </span>
+              </div>
+
+            }
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+  </div>
+</section>

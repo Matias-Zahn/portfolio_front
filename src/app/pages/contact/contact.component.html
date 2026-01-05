@@ -1,0 +1,126 @@
+<section class="min-h-screen bg-black text-white px-6 py-20 flex items-center">
+  <div class="container mx-auto max-w-5xl">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">Hablemos</h2>
+      <p class="text-gray-400">
+        ¿Tienes una idea o proyecto en mente? Estoy disponible para oportunidades freelance.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      
+      <div class="flex flex-col justify-center space-y-8">
+        <div class="space-y-2">
+          <h3 class="text-2xl font-semibold text-white">Ponte en contacto</h3>
+          <p class="text-gray-400">
+            Respondo a los correos en menos de 24 horas. ¡Espero saber de ti!
+          </p>
+        </div>
+
+        <div class="space-y-4">
+          <a href="mailto:matias.zahn@email.com" class="flex items-center gap-4 p-4 rounded-xl bg-zinc-900 border border-zinc-800 hover:border-blue-500 transition-all group">
+            <div class="p-3 bg-blue-500/10 rounded-lg text-blue-500 group-hover:bg-blue-500 group-hover:text-white transition-colors">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            </div>
+            <div>
+              <p class="text-sm text-gray-400">Envíame un correo</p>
+              <p class="text-white font-medium">zahnmatias14@gmail.com</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 shadow-xl">
+        
+        <form (ngSubmit)="onSubmit(contactForm)" #contactForm="ngForm" class="space-y-6">
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-2">
+              <label for="name" class="text-sm font-medium text-gray-300">Nombre</label>
+              <input 
+                type="text" 
+                name="name" 
+                [(ngModel)]="formData.name" 
+                required
+                class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder-zinc-600 focus:ring-1 focus:ring-blue-500"
+                placeholder="Tu nombre">
+            </div>
+            
+            <div class="space-y-2">
+              <label for="email" class="text-sm font-medium text-gray-300">Email</label>
+              <input 
+                type="email" 
+                name="email" 
+                [(ngModel)]="formData.email" 
+                required
+                email 
+                class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder-zinc-600 focus:ring-1 focus:ring-blue-500"
+                placeholder="tu@email.com">
+            </div>
+          </div>
+
+          <div class="space-y-2">
+            <label for="subject" class="text-sm font-medium text-gray-300">Asunto</label>
+            <input 
+              type="text" 
+              name="subject" 
+              [(ngModel)]="formData.subject" 
+              required
+              class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder-zinc-600 focus:ring-1 focus:ring-blue-500"
+              placeholder="Propuesta de proyecto...">
+          </div>
+
+          <div class="space-y-2">
+            <label for="message" class="text-sm font-medium text-gray-300">Mensaje</label>
+            <textarea 
+              name="message" 
+              rows="4" 
+              [(ngModel)]="formData.message" 
+              required
+              class="w-full bg-black border border-zinc-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors placeholder-zinc-600 resize-none focus:ring-1 focus:ring-blue-500"
+              placeholder="Cuéntame sobre tu proyecto..."></textarea>
+          </div>
+
+          @if (statusMessage) {
+            <div 
+              class="p-4 rounded-lg border text-sm font-medium animate-fade-in"
+              [class.bg-green-900]="statusMessage.type === 'success'"
+              [class.bg-green-500-10]="statusMessage.type === 'success'"
+              [class.text-green-300]="statusMessage.type === 'success'"
+              [class.border-green-800]="statusMessage.type === 'success'"
+              
+              [class.bg-red-900]="statusMessage.type === 'error'"
+              [class.bg-red-500-10]="statusMessage.type === 'error'"
+              [class.text-red-300]="statusMessage.type === 'error'"
+              [class.border-red-800]="statusMessage.type === 'error'"
+            >
+              {{ statusMessage.text }}
+            </div>
+          }
+
+          <button 
+            type="submit" 
+            [disabled]="isLoading || contactForm.invalid"
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 rounded-lg transition-all flex justify-center items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-blue-600"
+          >
+            
+            @if (isLoading) {
+              <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              <span>Enviando...</span>
+            } @else {
+              <span>Enviar Mensaje</span>
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+            }
+
+          </button>
+
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
